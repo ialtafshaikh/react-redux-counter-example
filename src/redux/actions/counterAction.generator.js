@@ -4,9 +4,9 @@ import { counterActionTypes } from "../constants/counterAction.types";
 const actionCountergenerator = (actionType, payload = {}) => {
   switch (actionType) {
     case counterActionTypes.INCREMENT:
-      return { type: counterActionTypes.INCREMENT, payload: payload };
+      return { type: counterActionTypes.INCREMENT, payload: { ...payload } };
     case counterActionTypes.DECREMENT:
-      return { type: counterActionTypes.DECREMENT, payload: payload };
+      return { type: counterActionTypes.DECREMENT, payload: { ...payload } };
     default:
       return {
         type: "Invalid Action",
